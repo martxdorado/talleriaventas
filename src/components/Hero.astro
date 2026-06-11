@@ -2,41 +2,41 @@
 
 ---
 
-<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Decorative Gradient Orbs -->
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <div
-      class="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl animate-float"
-      style="background: radial-gradient(circle, var(--color-neon-cyan) 0%, transparent 70%);"
-    ></div>
-    <div
-      class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full opacity-15 blur-3xl animate-float"
-      style="background: radial-gradient(circle, var(--color-neon-magenta) 0%, transparent 70%); animation-delay: -3s;"
-    ></div>
-    <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl animate-float"
-      style="background: radial-gradient(circle, var(--color-neon-cyan) 0%, var(--color-neon-magenta) 50%, transparent 70%); animation-delay: -1.5s;"
-    ></div>
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-base">
+  <!-- Decorative Organic Vector Shapes -->
+  <div class="pointer-events-none absolute inset-0 w-full h-full overflow-hidden" aria-hidden="true">
+    <!-- Organic Shape 1 (Pink) -->
+    <svg class="absolute -top-12 -left-12 w-[350px] md:w-[500px] h-[350px] md:h-[500px] text-neon-pink/15 animate-float" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M30,-40C43,-35,53,-23,60,-8C67,7,71,25,65,39C59,53,43,63,27,68C11,73,-5,73,-21,68C-37,63,-53,53,-60,39C-67,25,-65,7,-60,-8C-55,-23,-47,-35,-34,-40C-21,-45,-10,-45,2,-45C14,-45,17,-45,30,-40Z" transform="translate(50,50)" />
+    </svg>
+    <!-- Organic Shape 2 (Yellow) -->
+    <svg class="absolute top-[40%] -right-16 w-[300px] md:w-[450px] h-[300px] md:h-[450px] text-neon-yellow/10 animate-float-reverse" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M42.7,-60.1C55.3,-52.3,65.5,-39.8,70.9,-25.2C76.3,-10.7,76.9,5.8,73.4,21.5C69.9,37.2,62.3,52,50.1,62.4C37.8,72.9,20.9,78.9,4.4,72.8C-12.1,66.7,-28.1,48.5,-39.6,33.9C-51.1,19.3,-58,8.2,-61.8,-5.6C-65.7,-19.4,-66.4,-36.1,-58.3,-45C-50.2,-53.9,-33.2,-55,-19.1,-61C-5,-67,10,-77.9,25.2,-75.4C40.3,-72.9,30.1,-67.9,42.7,-60.1Z" transform="translate(50,50)" />
+    </svg>
+    <!-- Organic Shape 3 (Blue) -->
+    <svg class="absolute -bottom-16 -left-16 w-[350px] md:w-[480px] h-[350px] md:h-[480px] text-neon-blue/15 animate-float" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M47.7,-63.2C60.9,-54.6,70.1,-38.7,73.6,-22.1C77.1,-5.5,74.9,11.8,68,27.2C61.1,42.5,49.5,55.9,35,63.7C20.6,71.5,3.3,73.6,-14.7,70.8C-32.8,68,-51.7,60.2,-62.7,46.7C-73.7,33.2,-76.9,13.9,-75.1,-4.2C-73.4,-22.3,-66.7,-39.2,-54.5,-48C-42.3,-56.9,-24.6,-57.8,-7.8,-60.9C9,-64,26.7,-69.3,47.7,-63.2Z" transform="translate(50,50)" />
+    </svg>
   </div>
 
   <!-- Content -->
   <div class="relative z-10 text-center flex flex-col items-center gap-6 px-6">
     <!-- Label -->
     <div class="reveal flex items-center gap-3">
-      <span class="block w-8 h-px bg-neon-cyan"></span>
-      <span class="text-xs font-heading uppercase tracking-[0.3em] text-neon-cyan">
+      <span class="block w-8 h-px bg-neon-blue"></span>
+      <span class="text-xs font-heading uppercase tracking-[0.3em] text-neon-blue font-medium">
         Diseño Editorial
       </span>
-      <span class="block w-8 h-px bg-neon-cyan"></span>
+      <span class="block w-8 h-px bg-neon-blue"></span>
     </div>
 
     <!-- Main Heading -->
-    <h1 class="reveal reveal-delay-1 font-heading text-6xl md:text-8xl lg:text-9xl font-bold gradient-text leading-tight">
+    <h1 class="reveal reveal-delay-1 font-heading text-6xl md:text-8xl lg:text-9xl font-bold text-text-primary tracking-tight leading-tight">
       Marta Dorado
     </h1>
 
     <!-- Studio Name -->
-    <p class="reveal reveal-delay-2 text-xl md:text-2xl text-text-muted tracking-[0.35em] uppercase font-heading font-light">
+    <p class="reveal reveal-delay-2 text-xl md:text-2xl text-neon-pink tracking-[0.35em] uppercase font-heading font-medium">
       mrtx studio
     </p>
 
@@ -51,7 +51,7 @@
     <div class="reveal reveal-delay-4 mt-6">
       <a
         href="#portfolio"
-        class="cta-button inline-block px-8 py-4 border border-neon-cyan text-neon-cyan text-sm uppercase tracking-[0.2em] font-heading font-medium hover:bg-neon-cyan hover:text-bg-base transition-all duration-300"
+        class="cta-button inline-block px-8 py-4 border border-neon-pink text-neon-pink text-sm uppercase tracking-[0.2em] font-heading font-medium hover:bg-neon-pink hover:text-bg-base transition-all duration-300 rounded-xl"
       >
         Ver Portfolio
       </a>
@@ -78,7 +78,7 @@
   .typing-text {
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid var(--color-neon-cyan);
+    border-right: 2px solid var(--color-neon-pink);
     width: 0;
     animation:
       typing 3.5s steps(40, end) 1.5s forwards,
@@ -87,10 +87,7 @@
 
   /* CTA glow on hover */
   .cta-button:hover {
-    box-shadow:
-      0 0 20px rgba(0, 240, 255, 0.4),
-      0 0 60px rgba(0, 240, 255, 0.15);
-    animation: glow-pulse 3s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
   }
 
   /* Subtle bounce for scroll indicator */

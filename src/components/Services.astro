@@ -37,14 +37,21 @@ const services = [
 ];
 ---
 
-<section id="services" class="section-padding">
-  <div class="section-container">
+<section id="services" class="section-padding relative overflow-hidden">
+  <!-- Decorative organic shapes -->
+  <div class="pointer-events-none absolute inset-0 opacity-5" aria-hidden="true">
+    <svg class="absolute top-10 -left-12 w-80 h-80 text-neon-pink animate-float-reverse" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M30,-40C43,-35,53,-23,60,-8C67,7,71,25,65,39C59,53,43,63,27,68C11,73,-5,73,-21,68Z" transform="translate(50,50)" />
+    </svg>
+  </div>
+
+  <div class="section-container relative z-10">
     <!-- Section Header -->
     <div class="text-center mb-16 reveal">
-      <h2 class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-text-primary mb-4">
         Servicios
       </h2>
-      <div class="w-16 h-0.5 bg-neon-cyan mx-auto mb-6 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+      <div class="w-16 h-0.5 bg-neon-pink mx-auto mb-6"></div>
       <p class="text-text-muted text-lg max-w-xl mx-auto">
         Soluciones editoriales de principio a fin
       </p>
@@ -56,7 +63,7 @@ const services = [
         <div
           class={`p-8 rounded-2xl neon-border bg-bg-elevated/50 hover:bg-bg-elevated transition-all duration-300 reveal reveal-delay-${index + 1}`}
         >
-          <div class="text-neon-cyan" set:html={service.icon} />
+          <div class="text-neon-blue" set:html={service.icon} />
           <h3 class="text-xl font-heading font-semibold mt-4 mb-3">
             {service.title}
           </h3>

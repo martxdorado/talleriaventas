@@ -9,20 +9,27 @@ const skills = [
 ];
 ---
 
-<section id="about" class="section-padding">
-  <div class="section-container">
+<section id="about" class="section-padding relative overflow-hidden">
+  <!-- Decorative organic shapes -->
+  <div class="pointer-events-none absolute inset-0 opacity-10" aria-hidden="true">
+    <svg class="absolute top-1/2 -right-24 w-96 h-96 text-neon-yellow animate-float" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M42.7,-60.1C55.3,-52.3,65.5,-39.8,70.9,-25.2C76.3,-10.7,76.9,5.8,73.4,21.5C69.9,37.2,62.3,52,50.1,62.4C37.8,72.9,20.9,78.9,4.4,72.8C-12.1,66.7,-28.1,48.5,-39.6,33.9Z" transform="translate(50,50)" />
+    </svg>
+  </div>
+
+  <div class="section-container relative z-10">
     <!-- Section Title -->
     <div class="mb-16 reveal">
-      <h2 class="gradient-text font-heading text-4xl font-bold">Sobre mí</h2>
-      <div class="mt-4 h-0.5 w-16 bg-neon-cyan"></div>
+      <h2 class="font-heading text-4xl font-bold text-text-primary">Sobre mí</h2>
+      <div class="mt-4 h-0.5 w-16 bg-neon-pink"></div>
     </div>
 
     <!-- Two-Column Grid -->
     <div class="grid items-center gap-12 md:grid-cols-2">
       <!-- LEFT: Profile Image -->
       <div class="reveal reveal-delay-1">
-        <div class="group relative overflow-hidden rounded-2xl neon-border shadow-lg shadow-neon-cyan/10">
-          <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-neon-cyan/20 via-transparent to-neon-magenta/20 opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="group relative overflow-hidden rounded-2xl neon-border shadow-lg">
+          <div class="absolute -inset-0.5 rounded-2xl bg-neon-blue/20 opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100"></div>
           <img
             src="/images/profile.png"
             alt="Marta Dorado — Diseñadora editorial en mrtx studio"
@@ -35,7 +42,7 @@ const skills = [
       <!-- RIGHT: Bio Text -->
       <div class="reveal reveal-delay-2">
         <p class="text-lg leading-relaxed text-text-primary">
-          Soy Marta Dorado, diseñadora editorial con más de 8 años de experiencia transformando ideas en publicaciones que cautivan. Desde Madrid, dirijo <span class="neon-text-cyan font-semibold">mrtx studio</span>, donde cada proyecto editorial es una oportunidad para explorar la intersección entre tipografía, imagen y narrativa.
+          Soy Marta Dorado, diseñadora editorial con más de 8 años de experiencia transformando ideas en publicaciones que cautivan. Desde Madrid, dirijo <span class="neon-text-blue font-semibold">mrtx studio</span>, donde cada proyecto editorial es una oportunidad para explorar la intersección entre tipografía, imagen y narrativa.
         </p>
 
         <p class="mt-6 leading-relaxed text-text-muted">
@@ -45,7 +52,7 @@ const skills = [
         <!-- Skills / Tools -->
         <div class="mt-8 flex flex-wrap gap-3">
           {skills.map((skill) => (
-            <span class="rounded-full border border-border-subtle px-4 py-2 text-sm text-text-muted transition hover:border-neon-cyan hover:text-neon-cyan">
+            <span class="rounded-full border border-border-subtle px-4 py-2 text-sm text-text-muted transition hover:border-neon-yellow hover:text-neon-yellow">
               {skill}
             </span>
           ))}

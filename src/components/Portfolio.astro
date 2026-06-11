@@ -41,12 +41,19 @@ const projects = [
 ];
 ---
 
-<section id="portfolio" class="section-padding bg-bg-surface">
-  <div class="section-container">
+<section id="portfolio" class="section-padding bg-bg-surface relative overflow-hidden">
+  <!-- Decorative organic shapes -->
+  <div class="pointer-events-none absolute inset-0 opacity-10" aria-hidden="true">
+    <svg class="absolute -bottom-24 -right-24 w-96 h-96 text-neon-blue animate-float" viewBox="0 0 100 100" fill="currentColor">
+      <path d="M47.7,-63.2C60.9,-54.6,70.1,-38.7,73.6,-22.1C77.1,-5.5,74.9,11.8,68,27.2C61.1,42.5,49.5,55.9,35,63.7C20.6,71.5,3.3,73.6,-14.7,70.8Z" transform="translate(50,50)" />
+    </svg>
+  </div>
+
+  <div class="section-container relative z-10">
     <!-- Section Header -->
     <div class="mb-6 text-center reveal">
-      <h2 class="gradient-text font-heading text-4xl font-bold">Portfolio</h2>
-      <div class="mx-auto mt-4 h-0.5 w-16 bg-neon-cyan"></div>
+      <h2 class="font-heading text-4xl font-bold text-text-primary">Portfolio</h2>
+      <div class="mx-auto mt-4 h-0.5 w-16 bg-neon-yellow"></div>
     </div>
 
     <p class="mb-12 text-center text-text-muted reveal reveal-delay-1">
@@ -58,10 +65,10 @@ const projects = [
       {filters.map((filter, i) => (
         <button
           class:list={[
-            'portfolio-filter rounded-full px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300',
+            'portfolio-filter rounded-full px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300 cursor-pointer',
             i === 0
-              ? 'bg-neon-cyan text-bg-base'
-              : 'border border-border-subtle text-text-muted hover:border-neon-cyan hover:text-neon-cyan',
+              ? 'bg-neon-yellow text-bg-base'
+              : 'border border-border-subtle text-text-muted hover:border-neon-yellow hover:text-neon-yellow',
           ]}
           data-filter={filter}
         >
@@ -86,8 +93,8 @@ const projects = [
               loading="lazy"
             />
             <!-- Hover Overlay -->
-            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-bg-base/90 via-bg-base/40 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <span class="mb-1 text-xs font-medium uppercase tracking-wider text-neon-cyan">
+            <div class="absolute inset-0 flex flex-col justify-end bg-bg-base/90 p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span class="mb-1 text-xs font-medium uppercase tracking-wider text-neon-blue">
                 {project.category}
               </span>
               <h3 class="font-heading text-xl font-semibold text-text-primary">
@@ -98,7 +105,7 @@ const projects = [
 
           <!-- Card Info -->
           <div class="p-5">
-            <span class="text-xs font-medium uppercase tracking-wider text-neon-cyan">
+            <span class="text-xs font-medium uppercase tracking-wider text-neon-pink">
               {project.category}
             </span>
             <h3 class="mt-1 font-heading text-lg font-semibold text-text-primary">
@@ -129,11 +136,11 @@ const projects = [
 
         // Update active button styles
         buttons.forEach((b) => {
-          b.classList.remove('bg-neon-cyan', 'text-bg-base');
-          b.classList.add('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-cyan', 'hover:text-neon-cyan');
+          b.classList.remove('bg-neon-yellow', 'text-bg-base');
+          b.classList.add('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-yellow', 'hover:text-neon-yellow');
         });
-        btn.classList.add('bg-neon-cyan', 'text-bg-base');
-        btn.classList.remove('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-cyan', 'hover:text-neon-cyan');
+        btn.classList.add('bg-neon-yellow', 'text-bg-base');
+        btn.classList.remove('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-yellow', 'hover:text-neon-yellow');
 
         // Filter cards
         cards.forEach((card, index) => {
