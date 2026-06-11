@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+/* ===== Custom Theme ===== */
+@theme {
+  --color-bg-base: #0a0a0a;
+  --color-bg-surface: #111111;
+  --color-bg-elevated: #1a1a1a;
+  --color-neon-cyan: #00f0ff;
+  --color-neon-magenta: #ff00e5;
+  --color-text-primary: #f0f0f0;
+  --color-text-muted: #888888;
+  --color-border-subtle: #222222;
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
+  --animate-fade-in: fade-in 0.6s ease-out forwards;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-slide-in-left: slide-in-left 0.8s ease-out forwards;
+  --animate-slide-in-right: slide-in-right 0.8s ease-out forwards;
+}
+
+/* ===== Keyframes ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.5), 0 0 100px rgba(0, 240, 255, 0.2);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-neon-cyan); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-neon-cyan) var(--color-bg-base);
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(0, 240, 255, 0.3);
+  color: var(--color-text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neon-cyan);
+  border-radius: 3px;
+}
+
+/* ===== Utility Classes ===== */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.neon-text-cyan {
+  color: var(--color-neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5), 0 0 40px rgba(0, 240, 255, 0.2);
+}
+
+.neon-text-magenta {
+  color: var(--color-neon-magenta);
+  text-shadow: 0 0 10px rgba(255, 0, 229, 0.5), 0 0 40px rgba(255, 0, 229, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.neon-border {
+  border: 1px solid rgba(0, 240, 255, 0.2);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.neon-border:hover {
+  border-color: var(--color-neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(0, 240, 255, 0.05);
+}
+
+.glass {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ===== Reveal Animation ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }

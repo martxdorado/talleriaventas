@@ -1,0 +1,56 @@
+---
+const skills = [
+  'InDesign',
+  'Illustrator',
+  'Photoshop',
+  'Tipografía',
+  'Dirección de Arte',
+  'Maquetación',
+];
+---
+
+<section id="about" class="section-padding">
+  <div class="section-container">
+    <!-- Section Title -->
+    <div class="mb-16 reveal">
+      <h2 class="gradient-text font-heading text-4xl font-bold">Sobre mí</h2>
+      <div class="mt-4 h-0.5 w-16 bg-neon-cyan"></div>
+    </div>
+
+    <!-- Two-Column Grid -->
+    <div class="grid items-center gap-12 md:grid-cols-2">
+      <!-- LEFT: Profile Image -->
+      <div class="reveal reveal-delay-1">
+        <div class="group relative overflow-hidden rounded-2xl neon-border shadow-lg shadow-neon-cyan/10">
+          <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-neon-cyan/20 via-transparent to-neon-magenta/20 opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100"></div>
+          <img
+            src="/images/profile.png"
+            alt="Marta Dorado — Diseñadora editorial en mrtx studio"
+            class="relative w-full rounded-2xl object-cover"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- RIGHT: Bio Text -->
+      <div class="reveal reveal-delay-2">
+        <p class="text-lg leading-relaxed text-text-primary">
+          Soy Marta Dorado, diseñadora editorial con más de 8 años de experiencia transformando ideas en publicaciones que cautivan. Desde Madrid, dirijo <span class="neon-text-cyan font-semibold">mrtx studio</span>, donde cada proyecto editorial es una oportunidad para explorar la intersección entre tipografía, imagen y narrativa.
+        </p>
+
+        <p class="mt-6 leading-relaxed text-text-muted">
+          Mi trabajo abarca desde revistas de arquitectura y gastronomía hasta libros de fotografía y catálogos de moda. Creo que el buen diseño editorial no solo informa, sino que genera una experiencia táctil y visual que perdura.
+        </p>
+
+        <!-- Skills / Tools -->
+        <div class="mt-8 flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <span class="rounded-full border border-border-subtle px-4 py-2 text-sm text-text-muted transition hover:border-neon-cyan hover:text-neon-cyan">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,168 @@
+---
+const filters = ['Todos', 'Revistas', 'Libros', 'Catálogos'];
+
+const projects = [
+  {
+    title: 'Espacio Interior',
+    category: 'Revistas',
+    image: '/images/espacio-interior.png',
+    description: 'Revista de arquitectura y diseño de interiores. 120 páginas de elegancia visual.',
+  },
+  {
+    title: 'Raíces Urbanas',
+    category: 'Libros',
+    image: '/images/raices-urbanas.png',
+    description: 'Ensayo fotográfico sobre la transformación de las ciudades contemporáneas.',
+  },
+  {
+    title: 'Colección Otoño',
+    category: 'Catálogos',
+    image: '/images/coleccion-otono.png',
+    description: 'Catálogo de moda con tipografía experimental y dirección de arte integral.',
+  },
+  {
+    title: 'Gastronomía Nómada',
+    category: 'Revistas',
+    image: '/images/gastronomia-nomada.png',
+    description: 'Revista gastronómica trimestral con fotografía editorial de autor.',
+  },
+  {
+    title: 'Tipografía Viva',
+    category: 'Libros',
+    image: '/images/tipografia-viva.png',
+    description: 'Libro sobre la historia y evolución de la tipografía en el diseño moderno.',
+  },
+  {
+    title: 'Contraste',
+    category: 'Catálogos',
+    image: '/images/contraste.png',
+    description: 'Zine independiente de arte y fotografía en blanco y negro.',
+  },
+];
+---
+
+<section id="portfolio" class="section-padding bg-bg-surface">
+  <div class="section-container">
+    <!-- Section Header -->
+    <div class="mb-6 text-center reveal">
+      <h2 class="gradient-text font-heading text-4xl font-bold">Portfolio</h2>
+      <div class="mx-auto mt-4 h-0.5 w-16 bg-neon-cyan"></div>
+    </div>
+
+    <p class="mb-12 text-center text-text-muted reveal reveal-delay-1">
+      Proyectos seleccionados de diseño editorial
+    </p>
+
+    <!-- Filter Buttons -->
+    <div class="mb-10 flex flex-wrap justify-center gap-3 reveal reveal-delay-2" id="portfolio-filters">
+      {filters.map((filter, i) => (
+        <button
+          class:list={[
+            'portfolio-filter rounded-full px-5 py-2 text-sm font-medium tracking-wide transition-all duration-300',
+            i === 0
+              ? 'bg-neon-cyan text-bg-base'
+              : 'border border-border-subtle text-text-muted hover:border-neon-cyan hover:text-neon-cyan',
+          ]}
+          data-filter={filter}
+        >
+          {filter}
+        </button>
+      ))}
+    </div>
+
+    <!-- Project Grid -->
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3" id="portfolio-grid">
+      {projects.map((project, i) => (
+        <article
+          class={`portfolio-card group cursor-pointer overflow-hidden rounded-2xl neon-border bg-bg-elevated transition-all duration-500 reveal reveal-delay-${Math.min(i + 1, 6)}`}
+          data-category={project.category}
+        >
+          <!-- Image Container -->
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+            <!-- Hover Overlay -->
+            <div class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-bg-base/90 via-bg-base/40 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <span class="mb-1 text-xs font-medium uppercase tracking-wider text-neon-cyan">
+                {project.category}
+              </span>
+              <h3 class="font-heading text-xl font-semibold text-text-primary">
+                {project.title}
+              </h3>
+            </div>
+          </div>
+
+          <!-- Card Info -->
+          <div class="p-5">
+            <span class="text-xs font-medium uppercase tracking-wider text-neon-cyan">
+              {project.category}
+            </span>
+            <h3 class="mt-1 font-heading text-lg font-semibold text-text-primary">
+              {project.title}
+            </h3>
+            <p class="mt-2 text-sm leading-relaxed text-text-muted">
+              {project.description}
+            </p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const filtersContainer = document.getElementById('portfolio-filters');
+    const grid = document.getElementById('portfolio-grid');
+    if (!filtersContainer || !grid) return;
+
+    const buttons = filtersContainer.querySelectorAll<HTMLButtonElement>('.portfolio-filter');
+    const cards = grid.querySelectorAll<HTMLElement>('.portfolio-card');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button styles
+        buttons.forEach((b) => {
+          b.classList.remove('bg-neon-cyan', 'text-bg-base');
+          b.classList.add('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-cyan', 'hover:text-neon-cyan');
+        });
+        btn.classList.add('bg-neon-cyan', 'text-bg-base');
+        btn.classList.remove('border', 'border-border-subtle', 'text-text-muted', 'hover:border-neon-cyan', 'hover:text-neon-cyan');
+
+        // Filter cards
+        cards.forEach((card, index) => {
+          const category = card.dataset.category;
+          const isVisible = filter === 'Todos' || category === filter;
+
+          if (isVisible) {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.display = '';
+
+            // Staggered reveal
+            requestAnimationFrame(() => {
+              setTimeout(() => {
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              }, index * 80);
+            });
+          } else {
+            card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  });
+</script>

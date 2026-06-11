@@ -1,0 +1,127 @@
+---
+const socialLinks = [
+  {
+    name: 'Instagram',
+    label: '@mrtxstudio',
+    href: 'https://instagram.com/mrtxstudio',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>`,
+  },
+  {
+    name: 'Behance',
+    label: 'mrtxstudio',
+    href: 'https://behance.net/mrtxstudio',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M1 12s3-7 5-7h4c2 0 3 1.5 3 3s-1 3-3 3H6"/>
+      <path d="M6 11h5c2 0 3.5 1.5 3.5 3.5S13 18 11 18H6c-2 0-5-7-5-7"/>
+      <path d="M16 6h6"/>
+      <path d="M22 12c0-2-1.5-4-4-4s-4 2-4 4 1.5 4 4 4c1.5 0 2.7-.7 3.4-1.8"/>
+    </svg>`,
+  },
+  {
+    name: 'LinkedIn',
+    label: 'Marta Dorado',
+    href: 'https://linkedin.com/in/martadorado',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+      <rect x="2" y="9" width="4" height="12"/>
+      <circle cx="4" cy="4" r="2"/>
+    </svg>`,
+  },
+];
+---
+
+<section id="contact" class="section-padding bg-bg-surface">
+  <div class="section-container">
+    <!-- Section Header -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+        Contacto
+      </h2>
+      <div class="w-16 h-0.5 bg-neon-cyan mx-auto mb-6 shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
+      <p class="text-text-muted text-lg max-w-xl mx-auto">
+        Hablemos de tu próximo proyecto editorial
+      </p>
+    </div>
+
+    <!-- Two-column Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <!-- LEFT: Contact Form -->
+      <form id="contact-form" class="space-y-5 reveal reveal-delay-1">
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Nombre"
+          required
+          class="bg-bg-elevated border border-border-subtle rounded-xl px-5 py-4 text-text-primary w-full focus:border-neon-cyan focus:outline-none focus:shadow-[0_0_15px_rgba(0,240,255,0.15)] transition placeholder:text-text-muted/50"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          class="bg-bg-elevated border border-border-subtle rounded-xl px-5 py-4 text-text-primary w-full focus:border-neon-cyan focus:outline-none focus:shadow-[0_0_15px_rgba(0,240,255,0.15)] transition placeholder:text-text-muted/50"
+        />
+        <textarea
+          name="mensaje"
+          placeholder="Mensaje"
+          rows="5"
+          required
+          class="bg-bg-elevated border border-border-subtle rounded-xl px-5 py-4 text-text-primary w-full focus:border-neon-cyan focus:outline-none focus:shadow-[0_0_15px_rgba(0,240,255,0.15)] transition placeholder:text-text-muted/50 resize-none"
+        ></textarea>
+        <button
+          type="submit"
+          class="w-full py-4 bg-neon-cyan text-bg-base font-semibold rounded-xl hover:bg-neon-magenta transition-colors duration-300 text-lg cursor-pointer"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+
+      <!-- RIGHT: Contact Info -->
+      <div class="reveal reveal-delay-2 flex flex-col justify-center space-y-8">
+        <h3 class="text-xl font-heading font-semibold mb-6">
+          ¿Prefieres escribirme directamente?
+        </h3>
+
+        <!-- Email -->
+        <a
+          href="mailto:hola@mrtxstudio.com"
+          class="flex items-center gap-3 text-text-muted hover:text-neon-cyan transition"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          <span>hola@mrtxstudio.com</span>
+        </a>
+
+        <!-- Location -->
+        <div class="flex items-center gap-3 text-text-muted">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span>Madrid, España</span>
+        </div>
+
+        <!-- Social Links -->
+        <div class="space-y-4 pt-2">
+          {socialLinks.map((link) => (
+            <a
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 text-text-muted hover:text-neon-cyan transition"
+            >
+              <span set:html={link.icon} />
+              <span>{link.label}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,120 @@
+---
+
+---
+
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Decorative Gradient Orbs -->
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div
+      class="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full opacity-20 blur-3xl animate-float"
+      style="background: radial-gradient(circle, var(--color-neon-cyan) 0%, transparent 70%);"
+    ></div>
+    <div
+      class="absolute bottom-1/4 -right-32 w-[400px] h-[400px] rounded-full opacity-15 blur-3xl animate-float"
+      style="background: radial-gradient(circle, var(--color-neon-magenta) 0%, transparent 70%); animation-delay: -3s;"
+    ></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl animate-float"
+      style="background: radial-gradient(circle, var(--color-neon-cyan) 0%, var(--color-neon-magenta) 50%, transparent 70%); animation-delay: -1.5s;"
+    ></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center flex flex-col items-center gap-6 px-6">
+    <!-- Label -->
+    <div class="reveal flex items-center gap-3">
+      <span class="block w-8 h-px bg-neon-cyan"></span>
+      <span class="text-xs font-heading uppercase tracking-[0.3em] text-neon-cyan">
+        Diseño Editorial
+      </span>
+      <span class="block w-8 h-px bg-neon-cyan"></span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1 class="reveal reveal-delay-1 font-heading text-6xl md:text-8xl lg:text-9xl font-bold gradient-text leading-tight">
+      Marta Dorado
+    </h1>
+
+    <!-- Studio Name -->
+    <p class="reveal reveal-delay-2 text-xl md:text-2xl text-text-muted tracking-[0.35em] uppercase font-heading font-light">
+      mrtx studio
+    </p>
+
+    <!-- Typing Tagline -->
+    <div class="reveal reveal-delay-3 mt-2">
+      <span class="typing-text inline-block font-body text-lg md:text-xl text-text-muted/80">
+        Diseño editorial que cuenta historias
+      </span>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="reveal reveal-delay-4 mt-6">
+      <a
+        href="#portfolio"
+        class="cta-button inline-block px-8 py-4 border border-neon-cyan text-neon-cyan text-sm uppercase tracking-[0.2em] font-heading font-medium hover:bg-neon-cyan hover:text-bg-base transition-all duration-300"
+      >
+        Ver Portfolio
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
+    <span class="text-[10px] uppercase tracking-[0.3em] text-text-muted/50 font-heading">Scroll</span>
+    <svg
+      class="w-5 h-5 text-text-muted/50"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* Typing animation */
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--color-neon-cyan);
+    width: 0;
+    animation:
+      typing 3.5s steps(40, end) 1.5s forwards,
+      blink-caret 0.75s step-end infinite;
+  }
+
+  /* CTA glow on hover */
+  .cta-button:hover {
+    box-shadow:
+      0 0 20px rgba(0, 240, 255, 0.4),
+      0 0 60px rgba(0, 240, 255, 0.15);
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  /* Subtle bounce for scroll indicator */
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(8px);
+    }
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2.5s ease-in-out infinite;
+  }
+
+  /* Responsive typing: hide on very small screens where it clips */
+  @media (max-width: 400px) {
+    .typing-text {
+      white-space: normal;
+      overflow: visible;
+      border-right: none;
+      width: auto;
+      animation: fade-in 1s ease-out 1.5s forwards;
+    }
+  }
+</style>
