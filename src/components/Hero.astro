@@ -6,15 +6,15 @@
   <!-- Decorative Organic Vector Shapes -->
   <div class="pointer-events-none absolute inset-0 w-full h-full overflow-hidden" aria-hidden="true">
     <!-- Organic Shape 1 (Pink) -->
-    <svg class="absolute -top-12 -left-12 w-[350px] md:w-[500px] h-[350px] md:h-[500px] text-neon-pink/15 animate-float" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="parallax-shape absolute -top-12 -left-12 w-[350px] md:w-[500px] h-[350px] md:h-[500px] text-neon-pink/15 transition-transform duration-300 ease-out" viewBox="0 0 100 100" fill="currentColor">
       <path d="M30,-40C43,-35,53,-23,60,-8C67,7,71,25,65,39C59,53,43,63,27,68C11,73,-5,73,-21,68C-37,63,-53,53,-60,39C-67,25,-65,7,-60,-8C-55,-23,-47,-35,-34,-40C-21,-45,-10,-45,2,-45C14,-45,17,-45,30,-40Z" transform="translate(50,50)" />
     </svg>
     <!-- Organic Shape 2 (Yellow) -->
-    <svg class="absolute top-[40%] -right-16 w-[300px] md:w-[450px] h-[300px] md:h-[450px] text-neon-yellow/10 animate-float-reverse" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="parallax-shape absolute top-[40%] -right-16 w-[300px] md:w-[450px] h-[300px] md:h-[450px] text-neon-yellow/10 transition-transform duration-300 ease-out" viewBox="0 0 100 100" fill="currentColor">
       <path d="M42.7,-60.1C55.3,-52.3,65.5,-39.8,70.9,-25.2C76.3,-10.7,76.9,5.8,73.4,21.5C69.9,37.2,62.3,52,50.1,62.4C37.8,72.9,20.9,78.9,4.4,72.8C-12.1,66.7,-28.1,48.5,-39.6,33.9C-51.1,19.3,-58,8.2,-61.8,-5.6C-65.7,-19.4,-66.4,-36.1,-58.3,-45C-50.2,-53.9,-33.2,-55,-19.1,-61C-5,-67,10,-77.9,25.2,-75.4C40.3,-72.9,30.1,-67.9,42.7,-60.1Z" transform="translate(50,50)" />
     </svg>
     <!-- Organic Shape 3 (Blue) -->
-    <svg class="absolute -bottom-16 -left-16 w-[350px] md:w-[480px] h-[350px] md:h-[480px] text-neon-blue/15 animate-float" viewBox="0 0 100 100" fill="currentColor">
+    <svg class="parallax-shape absolute -bottom-16 -left-16 w-[350px] md:w-[480px] h-[350px] md:h-[480px] text-neon-blue/15 transition-transform duration-300 ease-out" viewBox="0 0 100 100" fill="currentColor">
       <path d="M47.7,-63.2C60.9,-54.6,70.1,-38.7,73.6,-22.1C77.1,-5.5,74.9,11.8,68,27.2C61.1,42.5,49.5,55.9,35,63.7C20.6,71.5,3.3,73.6,-14.7,70.8C-32.8,68,-51.7,60.2,-62.7,46.7C-73.7,33.2,-76.9,13.9,-75.1,-4.2C-73.4,-22.3,-66.7,-39.2,-54.5,-48C-42.3,-56.9,-24.6,-57.8,-7.8,-60.9C9,-64,26.7,-69.3,47.7,-63.2Z" transform="translate(50,50)" />
     </svg>
   </div>
@@ -125,3 +125,32 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hero = document.getElementById('hero');
+    const shapes = document.querySelectorAll('.parallax-shape');
+
+    if (!hero || shapes.length === 0) return;
+
+    hero.addEventListener('mousemove', (e) => {
+      const { clientX, clientY } = e;
+      const x = (clientX / window.innerWidth - 0.5) * 2;
+      const y = (clientY / window.innerHeight - 0.5) * 2;
+
+      shapes.forEach((shape, index) => {
+        const factor = (index + 1) * 30; // Different depth per shape
+        const moveX = x * factor;
+        const moveY = y * factor;
+        (shape as HTMLElement).style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
+    
+    // Reset position on leave
+    hero.addEventListener('mouseleave', () => {
+      shapes.forEach((shape) => {
+        (shape as HTMLElement).style.transform = 'translate(0px, 0px)';
+      });
+    });
+  });
+</script>
