@@ -146,24 +146,24 @@ body {
 .section-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 8rem;
+  padding: 0 4rem;
 }
 
 @media (max-width: 1200px) {
   .section-container {
-    padding: 0 6rem;
+    padding: 0 3rem;
   }
 }
 
 @media (max-width: 1024px) {
   .section-container {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 }
 
 @media (max-width: 640px) {
   .section-container {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 }
 
