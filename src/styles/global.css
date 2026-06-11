@@ -142,12 +142,18 @@ body {
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
+}
+
+@media (max-width: 640px) {
+  .section-container {
+    padding: 0 1.75rem;
+  }
 }
 
 .section-padding {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .neon-text-pink {
