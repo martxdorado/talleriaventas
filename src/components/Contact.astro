@@ -81,11 +81,25 @@ const socialLinks = [
         ></textarea>
         <button
           type="submit"
-          class="w-full py-4 bg-neon-pink text-bg-base font-semibold rounded-xl hover:bg-neon-blue transition-colors duration-300 text-lg cursor-pointer"
+          class="submit-button w-full py-4 bg-neon-pink text-bg-base font-semibold rounded-xl text-lg cursor-pointer"
         >
           Enviar mensaje
         </button>
       </form>
+
+      <style>
+        .submit-button {
+          transition: background-color 200ms var(--ease-out-premium), transform 160ms var(--ease-out-premium);
+        }
+        @media (hover: hover) and (pointer: fine) {
+          .submit-button:hover {
+            background-color: var(--color-neon-blue);
+          }
+        }
+        .submit-button:active {
+          transform: scale(0.97);
+        }
+      </style>
 
       <!-- RIGHT: Contact Info -->
       <div class="reveal reveal-delay-2 flex flex-col justify-center space-y-8">

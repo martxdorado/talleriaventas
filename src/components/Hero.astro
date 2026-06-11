@@ -85,9 +85,19 @@
       blink-caret 0.75s step-end infinite;
   }
 
-  /* CTA glow on hover */
-  .cta-button:hover {
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+  /* CTA Button transitions */
+  .cta-button {
+    transition: background-color 200ms var(--ease-out-premium), color 200ms var(--ease-out-premium), box-shadow 200ms var(--ease-out-premium), transform 160ms var(--ease-out-premium);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .cta-button:hover {
+      box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+    }
+  }
+
+  .cta-button:active {
+    transform: scale(0.97);
   }
 
   /* Subtle bounce for scroll indicator */
