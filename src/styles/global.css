@@ -144,20 +144,26 @@ body {
 
 /* ===== Utility Classes ===== */
 .section-container {
-  max-width: 1300px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 5rem;
+  padding: 0 8rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 0 4rem;
+  }
+}
+
+@media (max-width: 640px) {
   .section-container {
     padding: 0 2rem;
   }
 }
 
 .section-padding {
-  padding-top: 14rem;
-  padding-bottom: 14rem;
+  padding-top: 18rem;
+  padding-bottom: 18rem;
 }
 
 .neon-text-pink {
