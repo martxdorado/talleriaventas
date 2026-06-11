@@ -19,13 +19,13 @@ const skills = [
 
   <div class="section-container relative z-10">
     <!-- Section Title -->
-    <div class="mb-16 reveal">
+    <div class="mb-24 reveal">
       <h2 class="font-heading text-4xl font-bold text-text-primary">Sobre mí</h2>
-      <div class="mt-4 h-0.5 w-16 bg-neon-pink"></div>
+      <div class="mt-6 h-0.5 w-16 bg-neon-pink"></div>
     </div>
 
     <!-- Two-Column Grid -->
-    <div class="grid items-center gap-12 md:grid-cols-2">
+    <div class="grid items-center gap-24 md:grid-cols-2">
       <!-- LEFT: Profile Image -->
       <div class="reveal reveal-delay-1">
         <div class="group relative overflow-hidden rounded-2xl neon-border shadow-lg">
@@ -41,18 +41,18 @@ const skills = [
 
       <!-- RIGHT: Bio Text -->
       <div class="reveal reveal-delay-2">
-        <p class="text-lg leading-relaxed text-text-primary">
+        <p class="text-xl leading-relaxed text-text-primary">
           Soy Marta Dorado, diseñadora editorial con más de 8 años de experiencia transformando ideas en publicaciones que cautivan. Desde Madrid, dirijo <span class="neon-text-blue font-semibold">mrtx studio</span>, donde cada proyecto editorial es una oportunidad para explorar la intersección entre tipografía, imagen y narrativa.
         </p>
 
-        <p class="mt-6 leading-relaxed text-text-muted">
+        <p class="mt-8 leading-relaxed text-text-muted text-lg">
           Mi trabajo abarca desde revistas de arquitectura y gastronomía hasta libros de fotografía y catálogos de moda. Creo que el buen diseño editorial no solo informa, sino que genera una experiencia táctil y visual que perdura.
         </p>
 
         <!-- Skills / Tools -->
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div class="mt-12 flex flex-wrap gap-4">
           {skills.map((skill) => (
-            <span class="rounded-full border border-border-subtle px-4 py-2 text-sm text-text-muted transition hover:border-neon-yellow hover:text-neon-yellow">
+            <span class="rounded-full border border-border-subtle px-5 py-3 text-sm text-text-muted transition hover:border-neon-yellow hover:text-neon-yellow">
               {skill}
             </span>
           ))}
