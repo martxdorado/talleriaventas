@@ -28,12 +28,12 @@ const skills = [
     <div class="grid items-center gap-24 md:grid-cols-2">
       <!-- LEFT: Profile Image -->
       <div class="reveal reveal-delay-1">
-        <div class="group relative overflow-hidden rounded-2xl neon-border shadow-lg">
-          <div class="absolute -inset-0.5 rounded-2xl bg-neon-blue/20 opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100"></div>
+        <div class="group relative overflow-hidden rounded-none neon-border shadow-lg">
+          <div class="absolute -inset-0.5 rounded-none bg-neon-blue/20 opacity-0 blur-sm transition-opacity duration-500 group-hover:opacity-100"></div>
           <img
             src="/images/profile.png"
             alt="Marta Dorado — Diseñadora editorial en mrtx studio"
-            class="relative w-full rounded-2xl object-cover"
+            class="relative w-full rounded-none object-cover"
             loading="lazy"
           />
         </div>
@@ -52,7 +52,7 @@ const skills = [
         <!-- Skills / Tools -->
         <div class="mt-12 flex flex-wrap gap-4">
           {skills.map((skill) => (
-            <span class="rounded-full border border-border-subtle px-5 py-3 text-sm text-text-muted transition hover:border-neon-yellow hover:text-neon-yellow">
+            <span class="rounded-none border border-border-subtle px-5 py-3 text-sm text-text-muted transition hover:border-neon-yellow hover:text-neon-yellow">
               {skill}
             </span>
           ))}
